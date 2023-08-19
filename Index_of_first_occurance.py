@@ -17,5 +17,5 @@ class Solution:
             if haystack[i:(len(needle) + i)] == needle:
                 return i
             
-            return (-1)
+        return (-1)
 

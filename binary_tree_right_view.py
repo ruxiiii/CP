@@ -34,3 +34,36 @@ class Solution:
 
 
         return res
+
+
+###way 2
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+            #level order
+        if root is None:
+            return None
+
+        queue = []
+        queue.append(root)
+        res = []
+
+        while(len(queue)!= 0):
+            n = len(queue)
+            for i in range(n):
+                curNode = queue.pop(0)
+                if i == n-1:
+                    res.append(curNode.val)
+                if curNode.left:
+                    queue.append(curNode.left)
+                if curNode.right:
+                    queue.append(curNode.right)
+        return res
+
+            

@@ -115,6 +115,25 @@ def maxlevel(root):
   return res
 
 
+def sumTree(root):
+    if root is None:
+        return 0
+
+    queue = []
+    queue.append(root)
+    total_sum = 0
+
+    while queue:
+        curNode = queue.pop(0)
+        total_sum += curNode.val
+
+        if curNode.left:
+            queue.append(curNode.left)
+        if curNode.right:
+            queue.append(curNode.right)
+
+    return total_sum
+
 
 
 

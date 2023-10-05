@@ -1,4 +1,16 @@
 '''to find maximum number in a tree'''
+#finding max
+def findmax(root):
+  if root is None:
+    return None
+  
+  leftmax = findmax(root.left)
+  rightmax = findmax(root.right)
+
+  return max(leftmax,rightmax,root.val)
+
+
+#wrong approach not traversing iteratively, not be solved using dynamix
 def max(node):
   if node is None:
     return None
@@ -14,15 +26,7 @@ def max(node):
   return max(res)
 
 
-#second way for finding max
-def findmax(root):
-  if root is None:
-    return None
-  
-  leftmax = findmax(root.left)
-  rightmax = findmax(root.right)
 
-  return max(leftmax,rightmax,root.val)
 
 '''find sum of all values in tree'''
 def sum(node):

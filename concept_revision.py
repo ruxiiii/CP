@@ -54,8 +54,6 @@ def sumtree(root):
   
   smallans1 = sumtree(root.left)
   smallans2 = sumtree(root.right)
-
-  s += root.val
   
   return smallans1 + root.val + smallans2
 
